@@ -12,8 +12,8 @@ const navLinks = [
     link: "#skills",
   },
   {
-    name: "Testimonials",
-    link: "#testimonials",
+    name: "Endorsments",
+    link: "#endorsments",
   },
 ];
 
@@ -202,7 +202,7 @@ const expLogos = [
   },
 ];
 
-const testimonials = [
+const endorsments = [
   {
     name: "Esther Howard",
     mentions: "@estherhoward",
@@ -277,7 +277,7 @@ export {
   counterItems,
   expCards,
   expLogos,
-  testimonials,
+  endorsments,
   socialImgs,
   techStackIcons,
   techStackImgs,
