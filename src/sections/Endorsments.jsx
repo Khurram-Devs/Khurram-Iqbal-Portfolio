@@ -10,8 +10,8 @@ const Endorsments = () => {
                 <TitleHeader title="What People Say About Me?" sub="⭐ Client Feedback Highlights" />
 
                 <div className="lg:columns-3 md:columns-2 columns-1 mt-16">
-                    {endorsments.map(({ imgPath, name, mentions, review }) => (
-                        <GlowCard card={{ review }}>
+                    {endorsments.map(({ imgPath, name, mentions, review }, index) => (
+                        <GlowCard card={{ review }} key={index}>
                             <div className='flex items-center gap-3'>
                                 <div>
                                     <img src={imgPath} alt={name} />
