@@ -10,7 +10,7 @@ const LogoSection = () => {
         )
     }
     return (
-        <div className='md:my-20 my-10 relative'>
+        <section className='md:my-20 my-10 relative pointer-events-none'>
             <div className='gradient-edge' />
             <div className='gradient-edge' />
 
@@ -26,7 +26,7 @@ const LogoSection = () => {
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
 

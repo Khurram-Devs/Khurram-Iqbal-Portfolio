@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { navLinks } from '../constants'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const NavBar = () => {
+
+    useGSAP(() => {
+        gsap.fromTo('.logo span',
+            {
+                opacity: 0
+            },
+            {
+                opacity: 1,
+                stagger: 0.1,
+                duration: 0.5,
+                ease: 'power2.inOut'
+            }
+        );
+    })
 
     const [scrolled, setScrolled] = useState(false);
 
@@ -18,7 +34,18 @@ const NavBar = () => {
         <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'}`}>
             <div className="inner">
                 <a href="#hero" className="logo">
-                    Khurram | DEVS
+                    <span>K</span>
+                    <span>h</span>
+                    <span>u</span>
+                    <span>r</span>
+                    <span>r</span>
+                    <span>a</span>
+                    <span>m</span>
+                    <span> | </span>
+                    <span>D</span>
+                    <span>E</span>
+                    <span>V</span>
+                    <span>S</span>
                 </a>
                 <nav className='desktop'>
                     <ul>

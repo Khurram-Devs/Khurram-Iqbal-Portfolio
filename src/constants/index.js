@@ -270,6 +270,8 @@ const socialImgs = [
   },
 ];
 
+const navLogo = "SHUE";
+
 export {
   words,
   abilities,
@@ -282,4 +284,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  navLogo,
 };

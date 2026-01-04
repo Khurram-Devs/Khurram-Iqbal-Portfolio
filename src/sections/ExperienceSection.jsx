@@ -81,7 +81,7 @@ const ExperienceSection = () => {
 
                                         <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                             <div className="timeline-logo">
-                                                <img src={card.logoPath} alt="logo" />
+                                                <img src={card.logoPath} alt="logo" className='pointer-events-none' />
                                             </div>
                                             <div>
                                                 <h1 className='font-semibold'>{card.title}</h1>
@@ -89,7 +89,7 @@ const ExperienceSection = () => {
                                                     📅 {card.date}
                                                 </p>
                                                 <p className='text-[#839cb5] italic'>Responsibilities</p>
-                                                <ul className="list-disc ms-5 mt-5 flex flex-col gap-5">
+                                                <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 pointer-events-none">
                                                     {card.responsibilities.map((responsibility) => (
                                                         <li key={responsibility} className='text-lg'>
                                                             {responsibility}

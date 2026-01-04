@@ -20,6 +20,8 @@ const HeroExperience = () => {
                 minDistance={5}
                 minPolarAngle={Math.PI / 5}
                 maxPolarAngle={Math.PI / 2}
+                minAzimuthAngle={Math.PI / -3.6}
+                maxAzimuthAngle={Math.PI / 3.6}
             />
             <HeroLights />
             <Particles count={100} />

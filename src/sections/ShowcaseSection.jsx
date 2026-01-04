@@ -53,7 +53,7 @@ const ShowcaseSection = () => {
                         <div className="image-wrapper">
                             <img src="/images/project1.png" alt="Project 1" />
                         </div>
-                        <div className="text-content">
+                        <div className="text-content pointer-events-none">
                             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum animi quod autem minus ex.</h2>
                             <p className="text-white-50 md:text-xl">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt molestias nostrum cum minus in commodi ullam repellendus iste officiis.
@@ -67,14 +67,14 @@ const ShowcaseSection = () => {
                             <div className='image-wrapper bg-[#ffefdb]'>
                                 <img src="/images/project2.png" alt="Project 2" />
                             </div>
-                            <h2>Lorem, ipsum dolor</h2>
+                            <h2 className='pointer-events-none'>Lorem, ipsum dolor</h2>
                         </div>
 
                         <div className="project" ref={project3Ref}>
                             <div className='image-wrapper bg-[#ffe7eb]'>
                                 <img src="/images/project3.png" alt="Project 3" />
                             </div>
-                            <h2>Lorem, ipsum dolor</h2>
+                            <h2 className='pointer-events-none'>Lorem, ipsum dolor</h2>
                         </div>
                     </div>
 
