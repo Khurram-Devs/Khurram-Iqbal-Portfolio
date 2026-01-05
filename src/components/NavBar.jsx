@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { navLinks } from '../constants'
+import { navContent, navLinks } from '../constants'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 const NavBar = () => {
 
     useGSAP(() => {
-        gsap.fromTo('.logo span',
-            {
-                opacity: 0
-            },
+        gsap.to('.logo',
             {
                 opacity: 1,
-                stagger: 0.1,
-                duration: 0.5,
+                duration: 0.6,
                 ease: 'power2.inOut'
             }
         );
@@ -33,20 +29,7 @@ const NavBar = () => {
     return (
         <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'}`}>
             <div className="inner">
-                <a href="#hero" className="logo">
-                    <span>K</span>
-                    <span>h</span>
-                    <span>u</span>
-                    <span>r</span>
-                    <span>r</span>
-                    <span>a</span>
-                    <span>m</span>
-                    <span> | </span>
-                    <span>D</span>
-                    <span>E</span>
-                    <span>V</span>
-                    <span>S</span>
-                </a>
+                <a href="#hero" className="logo">{navContent.logo}</a>
                 <nav className='desktop'>
                     <ul>
                         {navLinks.map(({ link, name }) => (
@@ -61,7 +44,7 @@ const NavBar = () => {
                 </nav>
                 <a href="#contact" className='contact-btn group'>
                     <div className='inner'>
-                        <span>Contact me</span>
+                        <span>{navContent.button}</span>
                     </div>
                 </a>
             </div>

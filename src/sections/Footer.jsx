@@ -1,12 +1,13 @@
 import React from 'react'
-import { socialImgs } from '../constants'
+import { footerContent, socialImgs } from '../constants'
 
 const Footer = () => {
     return (
         <footer className='footer'>
             <div className='footer-container'>
                 <div className="flex flex-col justify-center md:items-start items-center">
-                    <a href="/jsmastery.pro">Design By JS Mastery</a>
+                    <a href={footerContent.left.href}>{footerContent.left.text}</a>
+
                 </div>
                 <div className="socials">
                     {socialImgs.map((img) => (
@@ -16,8 +17,7 @@ const Footer = () => {
                     ))}
                 </div>
                 <div className="flex flex-col justify-center">
-                    <p className='text-center md:text-end'>
-                        © {new Date().getFullYear()} Developed With ❤ By Khurram</p>
+                    <p className='text-center md:text-end'>{footerContent.right.text}</p>
                 </div>
             </div>
         </footer>

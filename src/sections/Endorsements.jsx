@@ -1,17 +1,17 @@
 import React from 'react'
 import TitleHeader from '../components/TitleHeader'
-import { endorsments } from '../constants'
+import { endorsements, endorsementsContent } from '../constants'
 import GlowCard from '../components/GlowCard'
 
-const Endorsments = () => {
+const Endorsements = () => {
     return (
-        <section id='endorsments' className='flex-center section-padding'>
+        <section id='endorsements' className='flex-center section-padding'>
             <div className="w-full h-full md:px-10 px-5">
-                <TitleHeader title="What People Say About Me?" sub="⭐ Client Feedback Highlights" />
+                <TitleHeader title={endorsementsContent.titleHeader.title} sub={endorsementsContent.titleHeader.sub} />
 
                 <div className="lg:columns-3 md:columns-2 columns-1 mt-16">
-                    {endorsments.map(({ imgPath, name, mentions, review }, index) => (
-                        <GlowCard card={{ review }} key={index}>
+                    {endorsements.map(({ imgPath, name, mentions, review, starCount }, index) => (
+                        <GlowCard card={{ review, starCount }} key={index}>
                             <div className='flex items-center gap-3'>
                                 <div>
                                     <img src={imgPath} alt={name} />
@@ -30,4 +30,4 @@ const Endorsments = () => {
     )
 }
 
-export default Endorsments
+export default Endorsements

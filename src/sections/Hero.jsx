@@ -1,11 +1,12 @@
 import React from "react";
-import { words } from "../constants";
+import { heroContent, words } from "../constants";
 import Button from "../components/Button";
 import HeroExperience from "../components/HeroModels/HeroExperience";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import AnimatedCounter from "../components/AnimatedCounter";
 const Hero = () => {
+  const heroText = heroContent.heading.split(',')
 
   useGSAP(() => {
     gsap.fromTo('.hero-text h1',
@@ -26,7 +27,7 @@ const Hero = () => {
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="background" />
+        <img src={heroContent.imgPath} alt="background" />
       </div>
 
       <div className="hero-layout">
@@ -35,7 +36,7 @@ const Hero = () => {
           <div className="flex flex-col gap-7">
             <div className="hero-text pointer-events-none">
               <h1>
-                Shaping
+                {heroText[0]}
                 <span className="slide">
                   <span className="wrapper">
                     {words.map((word, index) => (
@@ -55,16 +56,15 @@ const Hero = () => {
                 </span>
               </h1>
 
-              <h1>into Real Projects</h1>
-              <h1>that Deliver Results</h1>
+              <h1>{heroText[1]}</h1>
+              <h1>{heroText[2]}</h1>
             </div>
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I'm Khurram, a develpor based in Pakistan with a passion for
-              code.
+              {heroContent.subtitle}
             </p>
             <Button className="md:w-80 md:h-16 w-60 h-12"
               id="button"
-              text="See my Work"
+              text={heroContent.button}
             />
           </div>
         </header>
@@ -76,10 +76,7 @@ const Hero = () => {
         </figure>
 
       </div>
-
       <AnimatedCounter />
-
-
     </section>
   );
 };

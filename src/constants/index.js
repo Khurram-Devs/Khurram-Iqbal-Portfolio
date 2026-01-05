@@ -1,3 +1,93 @@
+const headContent = {
+  title: `Khurram &mdash;&mdash; Portfolio`,
+};
+
+const navContent = {
+  logo: "Khurram | DEVS",
+  button: "Contact me",
+};
+
+const heroContent = {
+  heading: "Shaping,into Real Projects,that Deliver Results",
+  subtitle:
+    "Hi, I'm Khurram, a develpor based in Pakistan with a passion for code.",
+  button: "See my Work",
+  imgPath: "/images/bg.png",
+};
+
+const showcaseContent = {
+  project1: {
+    imgPath: "/images/project1.png",
+    heading:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum animi quod autem minus ex.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt molestias nostrum cum minus in commodi ullam repellendus iste officiis.",
+  },
+  project2: {
+    imgPath: "/images/project2.png",
+    heading: "Lorem, ipsum dolor",
+  },
+  project3: {
+    imgPath: "/images/project3.png",
+    heading: "Lorem, ipsum dolor",
+  },
+};
+
+const footerContent = {
+  left: {
+    text: "Design By JS Mastery",
+    href: "https://www.jsmastery.pro",
+  },
+  right: {
+    text: `© ${new Date().getFullYear()} Developed With ❤ By Khurram`,
+  },
+};
+
+const experienceSectionContent = {
+  titleHeader: {
+    title: "Professional Work Experience",
+    sub: "💼 My Career Overview",
+  },
+};
+
+const techStackContent = {
+  titleHeader: {
+    title: "My Preferred Tech Stack",
+    sub: "🤝 Skills I Can Offer",
+  },
+};
+
+const endorsementsContent = {
+  titleHeader: {
+    title: "What People Say About Me?",
+    sub: "⭐ Client Feedback Highlights",
+  },
+};
+
+const contactContent = {
+  titleHeader: {
+    title: "Get in Touch - Let's Connect",
+    sub: "💬 Have questions or ideas? Let's talk!",
+  },
+  name: {
+    label: "Your name",
+    placeholder: "What's your good name?",
+  },
+  email: {
+    label: "Your Email",
+    placeholder: "What's your email address?",
+  },
+  message: {
+    label: "Your Message",
+    placeholder: "How can I help you?",
+  },
+  button: {
+    loadingText: "Sending...",
+    text: "Send Message",
+    imgPath: "/images/arrow-down.svg",
+  },
+};
+
 const navLinks = [
   {
     name: "Work",
@@ -12,8 +102,8 @@ const navLinks = [
     link: "#skills",
   },
   {
-    name: "Endorsments",
-    link: "#endorsments",
+    name: "Endorsements",
+    link: "#endorsements",
   },
 ];
 
@@ -153,37 +243,43 @@ const expCards = [
     logoPath: "/images/logo1.png",
     title: "Frontend Developer",
     date: "January 2023 - Present",
-    responsibilities: [
+    bulletLabel: "Responsibilities",
+    bullets: [
       "Developed and maintained user-facing features for the Hostinger website.",
       "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
       "Optimized web applications for maximum speed and scalability.",
     ],
+    starCount: 4,
   },
   {
     review:
-      "Khurram’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+      "Khurram's contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
     imgPath: "/images/exp2.png",
     logoPath: "/images/logo2.png",
     title: "Full Stack Developer",
     date: "June 2020 - December 2023",
-    responsibilities: [
+    bulletLabel: "Responsibilities",
+    bullets: [
       "Led the development of Docker's web applications, focusing on scalability.",
       "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
       "Contributed to open-source projects that were used with the Docker ecosystem.",
     ],
+    starCount: 5,
   },
   {
     review:
-      "Khurram’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+      "Khurram's work on Appwrite's mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
     imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
     title: "React Native Developer",
     date: "March 2019 - May 2020",
-    responsibilities: [
+    bulletLabel: "Responsibilities",
+    bullets: [
       "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
       "Improved app performance and user experience through code optimization and testing.",
       "Coordinated with the product team to implement features based on feedback.",
     ],
+    starCount: 4,
   },
 ];
 
@@ -202,13 +298,14 @@ const expLogos = [
   },
 ];
 
-const endorsments = [
+const endorsements = [
   {
     name: "Esther Howard",
     mentions: "@estherhoward",
     review:
-      "I can’t say enough good things about Khurram. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "I can't say enough good things about Khurram. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
     imgPath: "/images/client1.png",
+    starCount: 5,
   },
   {
     name: "Wade Warren",
@@ -216,6 +313,7 @@ const endorsments = [
     review:
       "Working with Khurram was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
     imgPath: "/images/client3.png",
+    starCount: 5,
   },
   {
     name: "Guy Hawkins",
@@ -223,20 +321,23 @@ const endorsments = [
     review:
       "Collaborating with Khurram was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Khurram's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Khurram is the ideal partner.",
     imgPath: "/images/client2.png",
+    starCount: 4,
   },
   {
     name: "Marvin McKinney",
     mentions: "@marvinmckinney",
     review:
-      "Khurram was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "Khurram was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that's both modern and easy to navigate. Fantastic work overall.",
     imgPath: "/images/client5.png",
+    starCount: 4,
   },
   {
     name: "Floyd Miles",
     mentions: "@floydmiles",
     review:
-      "Khurram’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "Khurram's expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He's a true professional!",
     imgPath: "/images/client4.png",
+    starCount: 5,
   },
   {
     name: "Albert Flores",
@@ -244,6 +345,7 @@ const endorsments = [
     review:
       "Khurram was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
     imgPath: "/images/client6.png",
+    starCount: 4,
   },
 ];
 
@@ -270,8 +372,6 @@ const socialImgs = [
   },
 ];
 
-const navLogo = "SHUE";
-
 export {
   words,
   abilities,
@@ -279,10 +379,18 @@ export {
   counterItems,
   expCards,
   expLogos,
-  endorsments,
+  endorsements,
   socialImgs,
   techStackIcons,
   techStackImgs,
   navLinks,
-  navLogo,
+  headContent,
+  heroContent,
+  navContent,
+  showcaseContent,
+  footerContent,
+  contactContent,
+  endorsementsContent,
+  techStackContent,
+  experienceSectionContent,
 };

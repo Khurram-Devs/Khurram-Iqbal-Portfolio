@@ -5,10 +5,13 @@ import Hero from "./sections/Hero"
 import ShowcaseSection from "./sections/ShowcaseSection"
 import ExperienceSection from "./sections/ExperienceSection"
 import TechStack from "./sections/TechStack"
-import Endorsements from "./sections/Endorsments"
+import Endorsements from "./sections/Endorsements"
 import Contact from "./sections/Contact"
 import Footer from "./sections/Footer"
+import { headContent } from "./constants"
 const App = () => {
+  document.querySelector("title").innerHTML = headContent.title;
+
   return (
     <>
       <NavBar />

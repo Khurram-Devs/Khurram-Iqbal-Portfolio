@@ -1,6 +1,6 @@
 import React from 'react'
 import TitleHeader from '../components/TitleHeader'
-import { techStackIcons } from '../constants'
+import { techStackContent, techStackIcons } from '../constants'
 // import { techStackImgs } from '../constants'
 import TechIcon from '../components/Models/TechLogos/Techicon.jsx'
 import { useGSAP } from '@gsap/react'
@@ -25,9 +25,9 @@ const TechStack = () => {
     })
 
     return (
-        <div id="skills" className='flex-center section-padding'>
+        <section id="skills" className='flex-center section-padding'>
             <div className='w-full h-full md:px-10 px-5'>
-                <TitleHeader title="My Preferred Tech Stack" sub="🤝 Skills I Can Offer" />
+                <TitleHeader title={techStackContent.titleHeader.title} sub={techStackContent.titleHeader.sub} />
 
                 <div className="tech-grid">
                     {techStackIcons.map((icon) => (
@@ -60,7 +60,7 @@ const TechStack = () => {
                 </div>
 
             </div>
-        </div>
+        </section>
     )
 }
 

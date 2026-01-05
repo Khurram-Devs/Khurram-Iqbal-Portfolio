@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
+import { showcaseContent } from '../constants'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -51,12 +52,12 @@ const ShowcaseSection = () => {
                     {/* LEFT SIDE */}
                     <div className="first-project-wrapper" ref={project1Ref}>
                         <div className="image-wrapper">
-                            <img src="/images/project1.png" alt="Project 1" />
+                            <img src={showcaseContent.project1.imgPath} alt={showcaseContent.project1.heading} />
                         </div>
                         <div className="text-content pointer-events-none">
-                            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum animi quod autem minus ex.</h2>
+                            <h2>{showcaseContent.project1.heading}</h2>
                             <p className="text-white-50 md:text-xl">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt molestias nostrum cum minus in commodi ullam repellendus iste officiis.
+                                {showcaseContent.project1.description}
                             </p>
                         </div>
                     </div>
@@ -65,16 +66,16 @@ const ShowcaseSection = () => {
                     <div className="project-list-wrapper overflow-hidden">
                         <div className="project" ref={project2Ref}>
                             <div className='image-wrapper bg-[#ffefdb]'>
-                                <img src="/images/project2.png" alt="Project 2" />
+                                <img src={showcaseContent.project2.imgPath} alt={showcaseContent.project2.heading} />
                             </div>
-                            <h2 className='pointer-events-none'>Lorem, ipsum dolor</h2>
+                            <h2 className='pointer-events-none'>{showcaseContent.project2.heading}</h2>
                         </div>
 
                         <div className="project" ref={project3Ref}>
                             <div className='image-wrapper bg-[#ffe7eb]'>
-                                <img src="/images/project3.png" alt="Project 3" />
+                                <img src={showcaseContent.project3.imgPath} alt={showcaseContent.project3.heading} />
                             </div>
-                            <h2 className='pointer-events-none'>Lorem, ipsum dolor</h2>
+                            <h2 className='pointer-events-none'>{showcaseContent.project3.heading}</h2>
                         </div>
                     </div>
 

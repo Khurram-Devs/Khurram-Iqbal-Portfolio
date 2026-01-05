@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 
 import TitleHeader from "../components/TitleHeader";
 import ContactExperience from "../components/models/contact/ContactExperience";
+import { contactContent } from "../constants";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -42,9 +43,8 @@ const Contact = () => {
   return (
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
-        <TitleHeader
-          title="Get in Touch - Let's Connect"
-          sub="💬 Have questions or ideas? Let's talk! 🚀"
+        <TitleHeader title={contactContent.titleHeader.title}
+          sub={contactContent.titleHeader.sub}
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
@@ -55,39 +55,39 @@ const Contact = () => {
                 className="w-full flex flex-col gap-7"
               >
                 <div>
-                  <label htmlFor="name">Your name</label>
+                  <label htmlFor="name">{contactContent.name.label}</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="What's your good name?"
+                    placeholder={contactContent.name.placeholder}
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email">Your Email</label>
+                  <label htmlFor="email">{contactContent.email.label}</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="What's your email address?"
+                    placeholder={contactContent.email.placeholder}
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message">Your Message</label>
+                  <label htmlFor="message">{contactContent.message.label}</label>
                   <textarea
                     id="message"
                     name="message"
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="How can I help you?"
+                    placeholder={contactContent.message.placeholder}
                     rows="5"
                     required
                   />
@@ -97,10 +97,10 @@ const Contact = () => {
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
-                      {loading ? "Sending..." : "Send Message"}
+                      {loading ? contactContent.button.loadingText : contactContent.button.text}
                     </p>
                     <div className="arrow-wrapper">
-                      <img src="/images/arrow-down.svg" alt="arrow" />
+                      <img src={contactContent.button.imgPath} alt="arrow" />
                     </div>
                   </div>
                 </button>
